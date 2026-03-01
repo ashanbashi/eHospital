@@ -6,7 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Sokohub.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eHospital.settings')
+>>>>>>> 830e338 (first commit)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
