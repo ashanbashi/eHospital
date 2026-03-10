@@ -1,0 +1,62 @@
+{%extends 'starter-page.html'%}
+
+{% load static %}
+
+{%block content%}
+
+<h1 class="text-center">Booked Appointments</h1>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, ipsam! Esse nam debitis deleniti? Assumenda explicabo fugit, repudiandae, fuga eos, officiis expedita itaque ullam repellat quod ex culpa fugiat amet?
+Id impedit ipsum debitis placeat ratione quidem voluptate laboriosam doloremque rerum animi architecto sit cupiditate minus modi, fuga eveniet corporis odio suscipit! Aperiam sit nesciunt laborum nostrum. Laudantium, beatae consequatur!</p>
+
+
+<table class="table table-dark">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Date & Time</th>
+        <th>Department</th>
+        <th>Doctor</th>
+        <th>Message</th>
+        <th>Actions</th>
+
+    </tr>
+
+
+    {%for allappointments in allappointments%}
+    <tr>
+        <td>{{allappointments.name}}</td>
+        <td>{{allappointments.email}}</td>
+        <td>{{allappointments.phone}}</td>
+        <td>{{allappointments.datetime}}</td>
+        <td>{{allappointments.department}}</td>
+        <td>{{allappointments.doctor}}</td>
+        <td>{{allappointments.message}}</td>
+        <td>
+            <a href="/edit/{{allappointments.id}}/" class="btn btn-outline-warning">Edit</a>
+            <a href="/delete/{{allappointments.id}}/" class="btn btn-outline-danger">Delete</a>
+        </td>
+    </tr>
+    
+
+    {%endfor%}
+
+
+
+
+
+</table>
+
+  {%for message in messages%}
+
+
+
+        <p class="alert alert-success">{{message}}</p>
+
+
+
+        {%endfor%}
+
+
+
+{%endblock%}
