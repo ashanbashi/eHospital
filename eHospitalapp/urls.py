@@ -6,7 +6,7 @@ from eHospitalapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
 
     path('starter/', views.starter, name='starter'),
 
@@ -15,6 +15,10 @@ urlpatterns = [
     path('show/', views.show, name='show'),
 
     path('about/', views.about, name='about'),
+
+    path('', views.register, name='register'),
+
+    path('login/', views.login, name='login'),
 
     path('delete/<int:id>/', views.delete),
 
